@@ -1,0 +1,35 @@
+<div class="container mt-4">
+    <h2 class="text-center">Envio de mensajes</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group mt-2">
+        <label for="name">Nombre</label>
+        <input id="name" type="text" class="form-control" formControlName="name">
+        <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="text-danger">
+          Nombre es obligatorio.
+        </div>
+      </div>
+  
+      <div class="form-group mt-2">
+        <label for="email">Correo Electrónico</label>
+        <input id="email" type="email" class="form-control" formControlName="email">
+        <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" class="text-danger">
+          <div *ngIf="contactForm.get('email')?.errors?.['required']">Correo electrónico es obligatorio.</div>
+          <div *ngIf="contactForm.get('email')?.errors?.['email']">Formato de correo electrónico no válido.</div>
+        </div>
+      </div>
+  
+      <div class="form-group mt-2">
+        <label for="message">Mensaje</label>
+        <textarea id="message" class="form-control" formControlName="message"></textarea>
+        <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="text-danger">
+          Mensaje es obligatorio.
+        </div>
+      </div>
+      
+      <div class="d-flex justify-content-center mt-2">
+        <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Enviar</button>
+      </div>
+
+    </form>
+  </div>
+  

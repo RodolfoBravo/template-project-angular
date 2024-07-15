@@ -1,0 +1,8 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 class="text-center">Parent Component</h2>
+      <app-child-component [childMessage]="parentMessage" (messageEvent)="handleChildMessage($event)"></app-child-component>
+    </div>
+  </div>
+</div>

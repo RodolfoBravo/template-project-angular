@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <div *ngIf="loading" class="text-center mt-2">Loading...</div>
+  <div *ngIf="error" class="error text-center mt-2">{{ error }}</div>
+  
+  <div *ngIf="post && !loading && !error" class="mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">{{ post.title }}</h2>
+        <p class="card-text">{{ post.body }}</p>
+      </div>
+    </div>
+  </div>
+</div>

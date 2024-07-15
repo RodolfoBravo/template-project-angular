@@ -1,0 +1,17 @@
+.error {
+    color: red;
+  }
+.list-group-item:hover{
+  background-color: #008cff79;
+}
+.no-decoration {
+  font-size: 16px;
+  font-weight: bold;
+  color: black; 
+  text-decoration: none; 
+}
+
+.no-decoration:hover {
+  color: black;
+  text-decoration: none; 
+}

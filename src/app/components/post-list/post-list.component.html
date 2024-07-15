@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <h1>Posts</h1>
+  
+  <div *ngIf="loading" class="mt-2">Loading...</div>
+  
+  <div *ngIf="error" class="error mt-2">{{ error }}</div>
+  
+  <div class="card mt-2" *ngIf="!loading && !error">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let post of posts">
+        <a [routerLink]="['/post', post.id]" class="card-link no-decoration">{{ post.title }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
